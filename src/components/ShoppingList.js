@@ -7,9 +7,11 @@ function ShoppingList({ items, onItemFormSubmit }) {
   const [selectedCategory, setSelectedCategory] = useState("All");
   const [search, setSearch] = useState("");
 
+  
   function handleCategoryChange(event) {
     setSelectedCategory(event.target.value);
   }
+
 
   const itemsToDisplay = items
  
@@ -18,6 +20,7 @@ function ShoppingList({ items, onItemFormSubmit }) {
     )
     
     .filter((item) => item.name.toLowerCase().includes(search.toLowerCase()));
+
 
   return (
     <div className="ShoppingList">
@@ -35,5 +38,6 @@ function ShoppingList({ items, onItemFormSubmit }) {
     </div>
   );
 }
+
 
 export default ShoppingList;
